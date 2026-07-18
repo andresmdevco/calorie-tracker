@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <h1>Contador Calorías</h1>
+      <h1 className="text-6xl">Contador Calorías</h1>
     </>
   )
 }
