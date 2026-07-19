@@ -21,4 +21,5 @@ export const activityReducer = (
         console.log('desde el type de save-activity')
     }
     
+    return state
 }
