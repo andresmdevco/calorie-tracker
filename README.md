@@ -8,6 +8,9 @@ Aplicación web construida con **React y TypeScript** para llevar el control de 
 
 🔗 [calorie-tracker-andresmdevco.vercel.app](https://calorie-tracker-andresmdevco.vercel.app/)
 
+## 👀 Vista previa
+https://github.com/user-attachments/assets/8ce5ffcb-31b3-47af-8b69-026f9b946946
+
 ## 🛠️ Tecnologías Usadas
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
