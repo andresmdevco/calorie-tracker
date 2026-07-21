@@ -1,6 +1,6 @@
 # 🔥 Calorie Tracker
 
-Aplicación web para llevar el control de calorías consumidas y quemadas durante el día. Permite registrar comidas y ejercicios, calcula automáticamente el balance calórico y guarda la información en el `localStorage` del navegador para que persista entre sesiones.
+Aplicación web construida con **React y TypeScript** para llevar el control de calorías consumidas y quemadas durante el día. Permite registrar comidas y ejercicios, calcula automáticamente el balance calórico y guarda la información en el `localStorage` del navegador para que persista entre sesiones.
 
 ## 🌐 Demo
 
