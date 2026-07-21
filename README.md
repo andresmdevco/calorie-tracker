@@ -57,7 +57,7 @@ Además:
 - Estilizado utility-first con Tailwind CSS.
 - Organización de proyecto por responsabilidades (components, reducers, types, data).
 
-## 🚀 Instalación y uso
+## 🚀 Como ejecutar el proyecto
 
 ```bash
 # Clonar el repositorio
