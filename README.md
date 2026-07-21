@@ -1,75 +1,85 @@
-# React + TypeScript + Vite
+# 🔥 Calorie Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web para llevar el control de calorías consumidas y quemadas durante el día. Permite registrar comidas y ejercicios, calcula automáticamente el balance calórico y guarda la información en el `localStorage` del navegador para que persista entre sesiones.
 
-Currently, two official plugins are available:
+## 🌐 Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-## React Compiler
+🔗 [calorie-tracker-andresmdevco.vercel.app](https://calorie-tracker-andresmdevco.vercel.app/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologías Usadas
 
-## Expanding the ESLint configuration
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19**
+- **Tailwind CSS 4**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Además:
+- **useReducer** — manejo del estado global de la app
+- **uuid** — generación de identificadores únicos
+- **Heroicons** — íconos de edición y eliminación
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Características
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- ➕ Registro de actividades (comida o ejercicio) con nombre y calorías.
+- ✏️ Edición de actividades ya registradas.
+- 🗑️ Eliminación de actividades individuales.
+- 🔄 Botón para reiniciar la aplicación por completo.
+- 📊 Resumen en tiempo real: calorías consumidas, quemadas y balance neto.
+- 💾 Persistencia de datos mediante `localStorage`.
+- 🎨 Interfaz responsive construida con Tailwind CSS.
 
+## 📂 Estructura del proyecto
+
+| Carpeta / Archivo | Descripción |
+| --- | --- |
+| `src/components/Form.tsx` | Formulario para crear y editar actividades |
+| `src/components/ActivityList.tsx` | Listado de actividades registradas |
+| `src/components/CalorieTracker.tsx` | Cálculo y despliegue del resumen de calorías |
+| `src/components/CalorieDisplay.tsx` | Componente reutilizable para mostrar un valor de calorías |
+| `src/data/categories.ts` | Definición de las categorías (Comida / Ejercicio) |
+| `src/reducers/activity-reducer.ts` | Reducer con la lógica de estado de las actividades |
+| `src/types/index.ts` | Tipos de TypeScript (`Activity`, `Category`) |
+| `src/App.tsx` | Componente principal que compone la aplicación |
+| `src/main.tsx` | Punto de entrada de la aplicación |
+
+## 🧠 Conceptos practicados
+
+- Manejo de estado complejo con `useReducer` y acciones tipadas.
+- Tipado avanzado con TypeScript (`type`, uniones discriminadas para acciones).
+- Sincronización de estado con `localStorage` mediante `useEffect`.
+- Optimización de cálculos derivados con `useMemo`.
+- Componentes controlados y formularios en React.
+- Estilizado utility-first con Tailwind CSS.
+- Organización de proyecto por responsabilidades (components, reducers, types, data).
+
+## 🚀 Instalación y uso
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/andresmdevco/calorie-tracker.git
+
+# Entrar al proyecto
+cd calorie-tracker
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+La aplicación quedará disponible en `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Otros comandos disponibles
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run build      # Genera la build de producción
+npm run preview    # Previsualiza la build de producción
+npm run lint       # Ejecuta el linter
 ```
+
