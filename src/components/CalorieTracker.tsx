@@ -34,7 +34,7 @@ export default function CalorieTracker({ activities }: CalorieTrackerProps) {
         />
         <CalorieDisplay
           calories={netCalories}
-          text="Diferencia"
+          text="Balance"
         />
       </div>
     </>
