@@ -36,19 +36,18 @@ Además:
 - 💾 Persistencia de datos mediante `localStorage`.
 - 🎨 Interfaz responsive construida con Tailwind CSS.
 
-## 📂 Estructura del proyecto
+## 📁 Archivos principales
 
-| Carpeta / Archivo | Descripción |
+| Archivo | Descripción |
 | --- | --- |
-| `src/components/Form.tsx` | Formulario para crear y editar actividades |
-| `src/components/ActivityList.tsx` | Listado de actividades registradas |
-| `src/components/CalorieTracker.tsx` | Cálculo y despliegue del resumen de calorías |
-| `src/components/CalorieDisplay.tsx` | Componente reutilizable para mostrar un valor de calorías |
-| `src/data/categories.ts` | Definición de las categorías (Comida / Ejercicio) |
-| `src/reducers/activity-reducer.ts` | Reducer con la lógica de estado de las actividades |
-| `src/types/index.ts` | Tipos de TypeScript (`Activity`, `Category`) |
-| `src/App.tsx` | Componente principal que compone la aplicación |
-| `src/main.tsx` | Punto de entrada de la aplicación |
+| `App.tsx` | Componente raíz. Inicializa `activityReducer`, persiste `activities` en `localStorage` y distribuye `state` y `dispatch` a `Form`, `CalorieTracker` y `ActivityList` |
+| `Form.tsx` | Formulario para crear y editar actividades. Cuando `state.activeId` cambia, precarga los datos de la actividad seleccionada para edición |
+| `ActivityList.tsx` | Renderiza el listado de actividades y despacha las acciones `set-activeId` (editar) y `delete-activity` (eliminar) |
+| `CalorieTracker.tsx` | Calcula calorías consumidas, quemadas y el balance neto a partir de `activities`, y las distribuye a `CalorieDisplay` |
+| `CalorieDisplay.tsx` | Componente reutilizable que muestra un valor de calorías junto a su etiqueta (Consumidas, Quemadas, Balance) |
+| `activity-reducer.ts` | Reducer con la lógica de estado: guardar, editar, eliminar actividades y reiniciar la app |
+| `data/categories.ts` | Catálogo de categorías (Comida / Ejercicio) usado por `Form` y `ActivityList` |
+| `types/index.ts` | Definiciones de tipos (`Activity`, `Category`) compartidas por toda la app |
 
 ## 🧠 Conceptos practicados
 
