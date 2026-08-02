@@ -11,7 +11,7 @@ Aplicación web construida con **React y TypeScript** para llevar el control de 
 ## 👀 Vista previa
 https://github.com/user-attachments/assets/8ce5ffcb-31b3-47af-8b69-026f9b946946
 
-## 🛠️ Tecnologías Usadas
+## 🛠️ Tecnologías Utilizadas
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
