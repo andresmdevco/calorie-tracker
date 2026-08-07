@@ -5,6 +5,8 @@ import {
   type ActivityActions,
   type ActivityState,
 } from '../reducers/activity-reducer';
+import type { Activity } from '../types';
+import { categories } from '../data/categories';
 
 type ActivityProviderProps = {
   children: ReactNode;
@@ -16,6 +18,8 @@ type ActivityContextProps = {
   caloriesConsumed: number;
   caloriesBurned: number;
   netCalories: number;
+  categoryName: (category: Activity['category']) => string[];
+  isEmptyActivities: boolean;
 };
 
 export const ActivityContext = createContext<ActivityContextProps>(null!);
@@ -45,6 +49,14 @@ export const ActivityProvider = ({ children }: ActivityProviderProps) => {
     [caloriesConsumed, caloriesBurned],
   );
 
+  const categoryName = useMemo(
+    () => (category: Activity['category']) =>
+      categories.map((cat) => (cat.id === category ? cat.name : '')),
+    [],
+  );
+
+  const isEmptyActivities = useMemo(() => state.activities.length === 0, [state.activities]);
+
   return (
     <ActivityContext.Provider
       value={{
@@ -53,6 +65,8 @@ export const ActivityProvider = ({ children }: ActivityProviderProps) => {
         caloriesConsumed,
         caloriesBurned,
         netCalories,
+        categoryName,
+        isEmptyActivities,
       }}
     >
       {children}
