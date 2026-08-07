@@ -1,28 +1,12 @@
-import { createContext, useMemo, useReducer, type Dispatch, type ReactNode } from 'react';
-import {
-  activityReducer,
-  initialState,
-  type ActivityActions,
-  type ActivityState,
-} from '../reducers/activity-reducer';
-import type { Activity } from '../types';
+import { useMemo, useReducer, type ReactNode } from 'react';
+import { activityReducer, initialState } from '../reducers/activity-reducer';
 import { categories } from '../data/categories';
+import type { Activity } from '../types';
+import { ActivityContext } from './ActivityContext';
 
 type ActivityProviderProps = {
   children: ReactNode;
 };
-
-type ActivityContextProps = {
-  state: ActivityState;
-  dispatch: Dispatch<ActivityActions>;
-  caloriesConsumed: number;
-  caloriesBurned: number;
-  netCalories: number;
-  categoryName: (category: Activity['category']) => string[];
-  isEmptyActivities: boolean;
-};
-
-export const ActivityContext = createContext<ActivityContextProps>(null!);
 
 export const ActivityProvider = ({ children }: ActivityProviderProps) => {
   const [state, dispatch] = useReducer(activityReducer, initialState);
